@@ -2,58 +2,33 @@ import React from "react";
 import {useState} from 'react';
 import "./style.css";
 
-export default function App() {
-  const [userInfo , setUserInfo] = useState({});
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [number, setNumber] = useState();
-
-  const handleName = (e) =>{
-    setName(e.target.value);
-  }
-
-  const handleEmail = (e) =>{
-    setEmail(e.target.value);
-  }
-
-  const handleNumber = (e) =>{
-    setNumber(e.target.value);
-  }
-
-  const assignUser = () =>{
-    setUserInfo({
-      name: name,
-      email: email,
-      age: number,
-    });
-    console.log(userInfo);
-  }
-  
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
+const App = () =>{
+  return(
+    <div className="from-container">
+    <div id="form">
       <input 
-        onChange={handleName}
+        type="text" 
+        className="name" 
+        placeholder="Enter Your name"
+      />
+      <input 
+        type="email" 
+        className="email" 
+        placeholder="Enter Your Email"
+      />
+      <input 
         type="text"
-        className="name"
-        placeholder="Name"
-        value={name}
+        className="roll"
+        placeholder="Enter your Roll number"
       />
       <input 
-        type="email"
-        className="email"
-        placeholder="Email"
-        onChange={handleEmail}
-        value={email}
+        type="text"
+        className="class"
+        placeholder="Enter your class"
       />
-      <input 
-        type="number"
-        className="age"
-        placeholder="Age"
-        onChange={handleNumber}
-        value={number}
-      />
-      <button onClick={assignUser}>Submit</button>
+      <button type="submit" className="button">Submit</button>
     </div>
-  );
+  </div>
+  )
 }
+export default App;
